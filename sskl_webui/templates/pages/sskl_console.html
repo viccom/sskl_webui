@@ -1,0 +1,25 @@
+{% extends "templates/new_base.html" %}
+
+{% block leftnav %}
+    {% for ll in leftnavlist %}
+        {% if ll['url']=='/myapp1_test1' %}
+            <li class="active">
+        {% else %}
+            <li class="">
+
+        {% endif %}
+                <a href={{ll['url']}} >
+            <i class="menu-icon fa {{ll['ico']}}"></i>
+            <span class="menu-text"> {{ll['name']}} </span>
+        </a>
+
+        <b class="arrow"></b>
+    </li>
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+<h1>Hi, {{doc}}!</h1>
+
+{% endblock %}
+

@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include sskl_webui *.css
+recursive-include sskl_webui *.csv
+recursive-include sskl_webui *.html
+recursive-include sskl_webui *.ico
+recursive-include sskl_webui *.js
+recursive-include sskl_webui *.json
+recursive-include sskl_webui *.md
+recursive-include sskl_webui *.png
+recursive-include sskl_webui *.py
+recursive-include sskl_webui *.svg
+recursive-include sskl_webui *.txt
+recursive-exclude sskl_webui *.pyc
