@@ -1,7 +1,12 @@
-DocType: Menu List,Menu Ico,
-DocType: Menu List,Menu List,
-DocType: Menu List,Menu Name,
-DocType: Menu List,Role,
-DocType: Menu List,Sskl Webui,
-DocType: Menu List,System Manager,
-DocType: Menu List,URL,
+,Battery Assess
+,Battery Trace
+DocType: Menu List,Menu Ico
+DocType: Menu List,Menu List
+DocType: Menu List,Menu Name
+,Remote Maintenance
+DocType: Menu List,Role
+DocType: Menu List,Sskl Webui
+,Station List
+,Station Map
+DocType: Menu List,System Manager
+DocType: Menu List,URL

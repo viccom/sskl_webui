@@ -1,7 +1,12 @@
-DocType: Menu List,Menu Ico,
+DocType: Menu List,Menu Ico,菜单图标
 DocType: Menu List,Menu List,菜单列表
-DocType: Menu List,Menu Name,
+DocType: Menu List,Menu Name,菜单名称
 DocType: Menu List,Role,角色
 DocType: Menu List,Sskl Webui,
 DocType: Menu List,System Manager,系统管理员
 DocType: Menu List,URL,网址
+,Battery Assess,电池评估
+,Battery Trace,电池跟踪
+,Station List,基站列表
+,Station Map,基站地图
+,Remote Maintenance,远程维护

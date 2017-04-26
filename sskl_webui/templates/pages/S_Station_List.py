@@ -1,4 +1,3 @@
-# coding=utf-8
 # Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 # License: GNU General Public License v3. See license.txt
 
@@ -6,6 +5,7 @@ from __future__ import unicode_literals
 import frappe
 import json
 from frappe import _
+from tieta.tieta.doctype.cell_station.cell_station import search_station
 
 def get_context(context):
     context.no_cache = 1
@@ -13,7 +13,6 @@ def get_context(context):
     n_list = []
     for m in menulist:
         dd = { }
-        print("@@@@@@@@", m['name'].decode('utf-8'))
         dd['url'] = frappe.get_value("Menu List", m['name'], "url")
         dd['name'] = frappe.get_value("Menu List", m['name'], "menuname")
         dd['ico'] = frappe.get_value("Menu List", m['name'], "menuico")
@@ -22,6 +21,8 @@ def get_context(context):
 
     n_list.sort(key=lambda k: (k.get('id', 0)))
     context.leftnavlist = n_list
-    context.title = _('sskl_console')
+    context.title = _('S_Station_List')
+    frappe.form_dict.rgn='RGN000005'
+    context.cell_list = search_station(**frappe.form_dict)
 
 

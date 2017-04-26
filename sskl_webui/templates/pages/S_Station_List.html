@@ -1,0 +1,120 @@
+{% extends "templates/new_base.html" %}
+<link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% block style %}
+
+{% endblock %}
+{% block leftnav %}
+    {% for ll in leftnavlist %}
+        {% if ll['url']=='/S_Station_List' %}
+            <li class="active">
+        {% else %}
+            <li class="">
+
+        {% endif %}
+                <a href={{ll['url']}} >
+            <i class="menu-icon fa {{ll['ico']}}"></i>
+            <span class="menu-text"> {{ll['name']}} </span>
+        </a>
+
+        <b class="arrow"></b>
+    </li>
+    {% endfor %}
+{% endblock %}
+
+
+{% block content %}
+{% include "templates/S_breadcrumbs.html" %}
+
+    <div class="col-xs-12 col-sm-12 widget-container-col" id="widget-container-col-2">
+        <div class="widget-box widget-color-grey" id="widget-box-2">
+            <div class="widget-header">
+                <h5 class="widget-title bigger lighter">
+                    <i class="ace-icon fa fa-table"></i>
+                    {{title}}
+                </h5>
+
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main no-padding">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead class="thin-border-bottom">
+                            <tr>
+                                <th>
+                                    编号
+                                </th>
+                                <th>
+                                    名称
+                                </th>
+                                <th class="hidden-480">地址</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            {% for cl in cell_list %}
+                            <tr>
+                                <td class="">{{cl['code']}}</td>
+
+                                <td>
+                                    <a href="#">{{cl['station_name']}}</a>
+                                </td>
+
+                                <td class="hidden-480">
+                                    <span class="label label-warning">{{cl['address_text']}}</span>
+                                </td>
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.span -->
+
+
+    <div class="col-xs-12">
+        <div class="clearfix">
+            <div class="pull-right tableTools-container"></div>
+        </div>
+        <div class="table-header">
+            Results for "Latest Registered Domains"
+        </div>
+
+        <!-- div.table-responsive -->
+
+        <!-- div.dataTables_borderWrap -->
+        <div>
+            <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+        </div>
+    </div>
+
+
+		<script src="/assets/sskl_webui/assets/js/jquery.dataTables.min.js"></script>
+		<script src="/assets/sskl_webui/assets/js/jquery.dataTables.bootstrap.min.js"></script>
+
+{% include "templates/pages/S_Station_List.js" %}
+{% endblock %}
+

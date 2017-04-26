@@ -2,8 +2,13 @@
 
 {% block leftnav %}
     {% for ll in leftnavlist %}
-    <li class="">
-        <a href={{ll['url']}} >
+        {% if ll['url']=='/S_Station_Map' %}
+            <li class="active">
+        {% else %}
+            <li class="">
+
+        {% endif %}
+                <a href={{ll['url']}} >
             <i class="menu-icon fa {{ll['ico']}}"></i>
             <span class="menu-text"> {{ll['name']}} </span>
         </a>
@@ -14,7 +19,6 @@
 {% endblock %}
 
 {% block content %}
-
 {% include "templates/S_breadcrumbs.html" %}
 <h1>Hi, {{title}}!</h1>
 
