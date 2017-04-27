@@ -27,6 +27,7 @@
 						var data = table.row( this ).data();
 						console.log(data['name']);
 						//alert( 'You clicked on '+data[0]+'\'s row' );
+                        //href="/S_Station_info/"+data['name'],/S_Station_info?name=CELL00000002
 
 
 					} );

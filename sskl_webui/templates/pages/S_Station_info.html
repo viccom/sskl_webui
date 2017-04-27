@@ -1,0 +1,192 @@
+{% extends "templates/new_base.html" %}
+
+{% block leftnav %}
+    {% for ll in leftnavlist %}
+    <li class="">
+        <a href={{ll['url']}} >
+            <i class="menu-icon fa {{ll['ico']}}"></i>
+            <span class="menu-text"> {{ll['name']}} </span>
+        </a>
+
+        <b class="arrow"></b>
+    </li>
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+
+{% include "templates/S_breadcrumbs.html" %}
+
+	<!-- accordion start -->
+	<div class="panel-group panel-transparent" id="accordion-3">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion-3" href="#collapseOne-3">
+						<i class="fa fa-cc-amex"></i>电池组信息
+					</a>
+				</h4>
+			</div>
+			<div id="collapseOne-3" class="panel-collapse collapse in">
+				<div class="panel-body" id="taglist">
+
+
+				</div>
+			</div>
+		</div>
+
+        <div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion-3" href="#collapseTwo-3" class="collapsed">
+						<i class="fa fa-bank"></i>基站信息
+					</a>
+				</h4>
+			</div>
+			<div id="collapseTwo-3" class="panel-collapse collapse">
+														<div class="panel-body">
+
+					<div class="col-xs-12 col-sm-6">
+
+						<div class="col-xs-6 col-sm-6">
+							基站编号：
+						</div>
+						<div class="col-xs-6 col-sm-6">
+							{{ doc.code }}
+						</div>
+
+					</div>
+
+					<div class="col-xs-12 col-sm-6">
+
+						<div class="col-xs-6 col-sm-6">
+							基站名称：
+						</div>
+						<div class="col-xs-6 col-sm-6">
+							{{ doc.station_name }}
+						</div>
+
+					</div>
+
+					<div class="col-xs-12 col-sm-6">
+
+						<div class="col-xs-6 col-sm-6">
+							基站描述：
+						</div>
+						<div class="col-xs-6 col-sm-6">
+							{{ doc.description }}
+						</div>
+
+					</div>
+
+					<div class="col-xs-12 col-sm-6">
+
+						<div class="col-xs-6 col-sm-6">
+							基站地址：
+						</div>
+						<div class="col-xs-6 col-sm-6">
+							{{ doc.address_text }}
+						</div>
+
+					</div>
+
+					<div class="col-xs-12 col-sm-6">
+
+						<div class="col-xs-6 col-sm-6">
+							基站类型：
+						</div>
+						<div class="col-xs-6 col-sm-6">
+							{{ doc.station_type }}
+						</div>
+
+					</div>
+
+					<div class="col-xs-12 col-sm-6">
+
+						<div class="col-xs-6 col-sm-6">
+							安装类型：
+						</div>
+						<div class="col-xs-6 col-sm-6">
+							{{ doc.setup_type }}
+						</div>
+
+					</div>
+
+					<div class="col-xs-12 col-sm-6">
+
+						<div class="col-xs-6 col-sm-6">
+							供电等级：
+						</div>
+						<div class="col-xs-6 col-sm-6">
+							{{ doc.power_level }}
+						</div>
+
+					</div>
+
+					<div class="col-xs-12 col-sm-6">
+
+						<div class="col-xs-6 col-sm-6">
+							安装时间：
+						</div>
+						<div class="col-xs-6 col-sm-6">
+							{{ doc.setup_time }}
+						</div>
+
+					</div>
+
+					<div class="col-xs-12 col-sm-6">
+
+						<div class="col-xs-6 col-sm-6">
+							电池安装类型：
+						</div>
+						<div class="col-xs-6 col-sm-6">
+							{{ doc.battery_setup_type }}
+						</div>
+
+					</div>
+
+					<div class="col-xs-12 col-sm-6">
+
+						<div class="col-xs-6 col-sm-6">
+							服务类型：
+						</div>
+						<div class="col-xs-6 col-sm-6">
+							{% for s in doc.cell_service_list %}
+							<div>
+								{{ s.service_type }}
+							</div>
+							{% endfor %}
+						</div>
+
+					</div>
+
+
+				</div>
+
+
+
+			</div>
+		</div>
+
+        <div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion-3" href="#collapseThree-3" class="collapsed">
+						<i class="fa fa-ioxhost"></i>网关信息
+					</a>
+				</h4>
+			</div>
+			<div id="collapseThree-3" class="panel-collapse collapse">
+				<div class="panel-body" id="symlink">
+
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- accordion end -->
+
+{% endblock %}
+
