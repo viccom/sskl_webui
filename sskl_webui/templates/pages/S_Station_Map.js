@@ -1,6 +1,6 @@
 <script type="text/javascript">
 	var map = new BMap.Map("l-map");
-	map.centerAndZoom("广州市", 10);
+	map.centerAndZoom("南京市", 10);
 	map.enableScrollWheelZoom();
 
 	var opts = {
