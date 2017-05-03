@@ -1,12 +1,48 @@
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +43,Battery No,电池编号
+apps/sskl_webui/sskl_webui/templates/new_topnav.html +19,Battery Platform,电池平台
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +184,Battery Setup Type,电池安装类型
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +49,Environment Temperature,环境温度
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +219,Gateway Info,网关信息
+DocType: Menu List,Id,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +37,Local Time,本地时间
+apps/sskl_webui/sskl_webui/templates/new_topnav.html +110,Logout,注销
 DocType: Menu List,Menu Ico,菜单图标
 DocType: Menu List,Menu List,菜单列表
 DocType: Menu List,Menu Name,菜单名称
+apps/sskl_webui/sskl_webui/templates/new_topnav.html +97,My Account,我的账户
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +162,Power Level,供电等级
 DocType: Menu List,Role,角色
+apps/sskl_webui/sskl_webui/templates/pages/S_Battery_Assess.py +29,S_Battery_Assess,电池评估
+apps/sskl_webui/sskl_webui/templates/pages/S_Battery_Trace.py +29,S_Battery_Trace,电池跟踪
+apps/sskl_webui/sskl_webui/templates/pages/S_Remote_Maintenance.py +29,S_Remote_Maintenance,远程维护
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.js +158,S_Station_List,基站列表
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.js +163,S_Station_Map,基站地图
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +195,Service Type,服务类型
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +173,Setup Time,安装时间
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +151,Setup Type,安装类型
 DocType: Menu List,Sskl Webui,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +129,Station Address,基站地址
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +96,Station Code,基站编码
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +118,Station Desc,基站描述
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +107,Station Name,基站名称
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +140,Station Type,基站类型
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +84,Station Info,基站信息
+apps/sskl_webui/sskl_webui/templates/new_topnav.html +102,Switch to Desktop,切换到后台
 DocType: Menu List,System Manager,系统管理员
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +44,Total Battery,电池总数
 DocType: Menu List,URL,网址
+apps/sskl_webui/sskl_webui/templates/new_topnav.html +86,Welcome,欢迎
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_List.html +36,address_text,地址
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +24,Battery Pack,电池组信息
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_List.html +33,code,编码
+apps/sskl_webui/sskl_webui/templates/S_breadcrumbs.html +11,sskl_console,控制台
+apps/sskl_webui/sskl_webui/templates/pages/sskl_me.py +32,sskl_me,关于我
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_List.html +34,station_name,名称
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_List.html +35,station_type,类型
 ,Battery Assess,电池评估
 ,Battery Trace,电池跟踪
+,Remote Maintenance,远程维护
 ,Station List,基站列表
 ,Station Map,基站地图
-,Remote Maintenance,远程维护
+,Battery Platform,电池平台
+,Switch to Desktop,切换到后台

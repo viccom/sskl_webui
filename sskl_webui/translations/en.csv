@@ -1,12 +1,41 @@
-,Battery Assess
-,Battery Trace
-DocType: Menu List,Menu Ico
-DocType: Menu List,Menu List
-DocType: Menu List,Menu Name
-,Remote Maintenance
-DocType: Menu List,Role
-DocType: Menu List,Sskl Webui
-,Station List
-,Station Map
-DocType: Menu List,System Manager
-DocType: Menu List,URL
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +43,Battery No,
+apps/sskl_webui/sskl_webui/templates/new_topnav.html +19,Battery Platform,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +184,Battery Setup Type,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +49,Environment Temperature,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +219,Gateway Info,
+DocType: Menu List,Id,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +37,Local Time,
+apps/sskl_webui/sskl_webui/templates/new_topnav.html +110,Logout,
+DocType: Menu List,Menu Ico,
+DocType: Menu List,Menu List,
+DocType: Menu List,Menu Name,
+apps/sskl_webui/sskl_webui/templates/new_topnav.html +97,My Account,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +162,Power Level,
+DocType: Menu List,Role,
+apps/sskl_webui/sskl_webui/templates/pages/S_Battery_Assess.py +29,S_Battery_Assess,
+apps/sskl_webui/sskl_webui/templates/pages/S_Battery_Trace.py +29,S_Battery_Trace,
+apps/sskl_webui/sskl_webui/templates/pages/S_Remote_Maintenance.py +29,S_Remote_Maintenance,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.js +158,S_Station_List,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.js +163,S_Station_Map,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +195,Service Type,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +173,Setup Time,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +151,Setup Type,
+DocType: Menu List,Sskl Webui,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +129,Station Address,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +96,Station Code,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +118,Station Desc,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +107,Station Name,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +140,Station Type,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +84,Station info,
+apps/sskl_webui/sskl_webui/templates/new_topnav.html +102,Switch to Desktop,
+DocType: Menu List,System Manager,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +44,Total Battery,
+DocType: Menu List,URL,
+apps/sskl_webui/sskl_webui/templates/new_topnav.html +86,Welcome,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_List.html +36,address_text,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_info.html +24,battery pack,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_List.html +33,code,
+apps/sskl_webui/sskl_webui/templates/S_breadcrumbs.html +11,sskl_console,
+apps/sskl_webui/sskl_webui/templates/pages/sskl_me.py +32,sskl_me,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_List.html +34,station_name,
+apps/sskl_webui/sskl_webui/templates/pages/S_Station_List.html +35,station_type,
