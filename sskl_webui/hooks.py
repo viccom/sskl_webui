@@ -118,4 +118,6 @@ app_license = "MIT"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "sskl_webui.event.get_events"
 # }
-
+website_route_rules = [
+	{"from_route": "/S_Station_infox/<path:name>", "to_route": "S_Station_info"}
+]

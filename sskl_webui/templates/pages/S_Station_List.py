@@ -8,6 +8,11 @@ from frappe import _
 from tieta.tieta.doctype.cell_station.cell_station import search_station
 
 def get_context(context):
+    if frappe.session.user == 'Guest':
+        frappe.local.flags.redirect_location = "/login"
+        raise frappe.Redirect
+    context.no_cache = 1
+    context.show_sidebar = True
     context.no_cache = 1
     menulist = frappe.get_all("Menu List")
     n_list = []
@@ -22,7 +27,10 @@ def get_context(context):
     n_list.sort(key=lambda k: (k.get('id', 0)))
     context.leftnavlist = n_list
     context.title = _('S_Station_List')
-    frappe.form_dict.rgn='RGN000005'
-    context.cell_list = search_station(**frappe.form_dict)
+    frappe.form_dict.rgn='RGN000023'
+    cell_list = search_station(**frappe.form_dict)
+    print('######S_Station_List:',cell_list)
+    context.cell_list = cell_list
+
 
 

@@ -1,17 +1,6 @@
 {% extends "templates/new_base.html" %}
 
-{% block leftnav %}
-    {% for ll in leftnavlist %}
-    <li class="">
-        <a href={{ll['url']}} >
-            <i class="menu-icon fa {{ll['ico']}}"></i>
-            <span class="menu-text"> {{ll['name']}} </span>
-        </a>
 
-        <b class="arrow"></b>
-    </li>
-    {% endfor %}
-{% endblock %}
 
 {% block content %}
 

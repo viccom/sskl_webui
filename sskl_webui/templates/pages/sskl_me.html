@@ -1,0 +1,187 @@
+{% extends "templates/new_base.html" %}
+
+{% block leftnav %}
+    {% for ll in leftnavlist %}
+    <li class="">
+        <a href={{ll['url']}} >
+            <i class="menu-icon fa {{ll['ico']}}"></i>
+            <span class="menu-text"> {{ _(ll['name'])}} </span>
+        </a>
+
+        <b class="arrow"></b>
+    </li>
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+
+{% include "templates/S_breadcrumbs.html" %}
+
+<div id="user-profile-3" class="user-profile row">
+    <div class="col-sm-offset-1 col-sm-10">
+
+
+        <div class="space"></div>
+
+        <form class="form-horizontal">
+            <div class="tabbable">
+                <ul class="nav nav-tabs padding-16">
+                    <li class="active">
+                        <a data-toggle="tab" href="#edit-basic" aria-expanded="true">
+                            <i class="green ace-icon fa fa-pencil-square-o bigger-125"></i>
+                            Basic Info
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a data-toggle="tab" href="#edit-settings" aria-expanded="false">
+                            <i class="purple ace-icon fa fa-cog bigger-125"></i>
+                            Settings
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a data-toggle="tab" href="#edit-password" aria-expanded="false">
+                            <i class="blue ace-icon fa fa-key bigger-125"></i>
+                            Password
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content profile-edit-tab-content">
+                    <div id="edit-basic" class="tab-pane active">
+                        <h4 class="header blue bolder smaller">General</h4>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4">
+                                <label class="ace-file-input ace-file-multiple"><input type="file"><span class="ace-file-container" data-title="Change avatar"><span class="ace-file-name" data-title="No File ..."><i class=" ace-icon ace-icon fa fa-picture-o"></i></span></span><a class="remove" href="#"><i class=" ace-icon fa fa-times"></i></a></label>
+                            </div>
+
+                            <div class="vspace-12-sm"></div>
+
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-username">Username</label>
+
+                                    <div class="col-sm-8">
+                                        <input class="col-xs-12 col-sm-10" type="text" id="form-field-username" placeholder="Username" value="{{ user }}" readonly="true">
+                                    </div>
+                                </div>
+
+                                <div class="space-4"></div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-first">Fullname</label>
+
+                                    <div class="col-sm-8">
+                                        <input class="col-xs-12 col-sm-10" type="text" id="form-field-username" placeholder="fullname" value="{{ fullname }}" readonly="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div id="edit-settings" class="tab-pane">
+                        <div class="space-10"></div>
+
+                        <div>
+                            <label class="inline">
+                                <input type="checkbox" name="form-field-checkbox" class="ace">
+                                <span class="lbl"> Make my profile public</span>
+                            </label>
+                        </div>
+
+                        <div class="space-8"></div>
+
+                        <div>
+                            <label class="inline">
+                                <input type="checkbox" name="form-field-checkbox" class="ace">
+                                <span class="lbl"> Email me new updates</span>
+                            </label>
+                        </div>
+
+                        <div class="space-8"></div>
+
+                        <div>
+                            <label>
+                                <input type="checkbox" name="form-field-checkbox" class="ace">
+                                <span class="lbl"> Keep a history of my conversations</span>
+                            </label>
+
+                            <label>
+                                <span class="space-2 block"></span>
+
+                                for
+                                <input type="text" class="input-mini" maxlength="3">
+                                days
+                            </label>
+                        </div>
+
+            <div class="clearfix form-actions">
+                <div class="col-md-offset-3 col-md-9">
+                    <button class="btn btn-info" type="button">
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        Save
+                    </button>
+
+                    &nbsp; &nbsp;
+                    <button class="btn" type="reset">
+                        <i class="ace-icon fa fa-undo bigger-110"></i>
+                        Reset
+                    </button>
+                </div>
+            </div>
+                    </div>
+
+                    <div id="edit-password" class="tab-pane">
+                        <div class="space-10"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-pass1">New Password</label>
+
+                            <div class="col-sm-9">
+                                <input type="password" id="form-field-pass1">
+                            </div>
+                        </div>
+
+                        <div class="space-4"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-pass2">Confirm Password</label>
+
+                            <div class="col-sm-9">
+                                <input type="password" id="form-field-pass2">
+                            </div>
+                        </div>
+
+            <div class="clearfix form-actions">
+                <div class="col-md-offset-3 col-md-9">
+                    <button class="btn btn-info" type="button">
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        Save
+                    </button>
+
+                    &nbsp; &nbsp;
+                    <button class="btn" type="reset">
+                        <i class="ace-icon fa fa-undo bigger-110"></i>
+                        Reset
+                    </button>
+                </div>
+            </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+        </form>
+    </div><!-- /.span -->
+</div>
+
+{% endblock %}
+

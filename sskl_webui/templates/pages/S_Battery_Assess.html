@@ -1,22 +1,6 @@
 {% extends "templates/new_base.html" %}
 
-{% block leftnav %}
-    {% for ll in leftnavlist %}
-        {% if ll['url']=='/S_Battery_Assess' %}
-            <li class="active">
-        {% else %}
-            <li class="">
 
-        {% endif %}
-                <a href={{ll['url']}} >
-            <i class="menu-icon fa {{ll['ico']}}"></i>
-            <span class="menu-text"> {{ll['name']}} </span>
-        </a>
-
-        <b class="arrow"></b>
-    </li>
-    {% endfor %}
-{% endblock %}
 
 {% block content %}
 {% include "templates/S_breadcrumbs.html" %}

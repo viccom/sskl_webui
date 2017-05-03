@@ -3,14 +3,14 @@
                             {% if title=='sskl_console' %}
                             <li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="/"{{title}}>{{title}}</a>
+								<a href="/"{{title}}>{{_(title)}}</a>
 							</li>
                             {% else %}
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="/sskl_console">sskl_console</a>
+								<a href="/sskl_console">{{_('sskl_console')}}</a>
 							</li>
-							<li class="active">{{title}}</li>
+							<li class="active">{{_(title)}}</li>
 
                             {% endif %}
 						</ul><!-- /.breadcrumb -->

@@ -6,9 +6,16 @@ from __future__ import unicode_literals
 import frappe
 import json
 from frappe import _
+from frappe.utils.user import get_fullname_and_avatar
+
 
 def get_context(context):
+    if frappe.session.user == 'Guest':
+        frappe.local.flags.redirect_location = "/login"
+        raise frappe.Redirect
     context.no_cache = 1
+    context.show_sidebar = True
+
     menulist = frappe.get_all("Menu List")
     n_list = []
     for m in menulist:
@@ -22,6 +29,6 @@ def get_context(context):
 
     n_list.sort(key=lambda k: (k.get('id', 0)))
     context.leftnavlist = n_list
-    context.title = _('sskl_console')
+    context.title = 'sskl_console'
 
 

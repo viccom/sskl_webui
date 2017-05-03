@@ -6,8 +6,8 @@
 					//"bInfo" : false,
 					//"pagingType": "full_numbers" ,
 					"ajax": {
-						"url": "/api/method/tieta.tieta.doctype.cell_station.cell_station.search_station?rgn=RGN000005",
-						// "url": "/assets/sskl_webui/arrays.txt",
+						//"url": "/api/method/tieta.tieta.doctype.cell_station.cell_station.search_station?rgn=RGN000023",
+						"url": "/api/method/tieta.tieta.doctype.cell_station.cell_station.list_station_map",
 						"dataSrc":"message",
                     },
 					"columns": [
@@ -26,8 +26,9 @@
 				    $('#example tbody').on('click', 'tr', function () {
 						var data = table.row( this ).data();
 						console.log(data['name']);
+						window.location.href="/S_Station_infox/"+data['name'];
 						//alert( 'You clicked on '+data[0]+'\'s row' );
-                        //href="/S_Station_info/"+data['name'],/S_Station_info?name=CELL00000002
+                        //href="/S_Station_infox/"+data['name'],/S_Station_infox/CELL00000002
 
 
 					} );

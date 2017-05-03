@@ -1,26 +1,29 @@
 {% extends "templates/new_base.html" %}
 
-{% block leftnav %}
-    {% for ll in leftnavlist %}
-        {% if ll['url']=='/S_Station_Map' %}
-            <li class="active">
-        {% else %}
-            <li class="">
-
-        {% endif %}
-                <a href={{ll['url']}} >
-            <i class="menu-icon fa {{ll['ico']}}"></i>
-            <span class="menu-text"> {{ll['name']}} </span>
-        </a>
-
-        <b class="arrow"></b>
-    </li>
-    {% endfor %}
+{% block mystyle %}
+    <style>
+        {% include "templates/includes/iot_device_map.css" %}
+    </style>
 {% endblock %}
+
+{% block myscript %}
+
+
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Uunwqg1begLNmZT29X128vIcnh0badER"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+
+
+{% endblock %}
+
+
 
 {% block content %}
 {% include "templates/S_breadcrumbs.html" %}
-<h1>Hi, {{title}}!</h1>
+<div id="l-map" style="width:100%; height: 100%; background-color:#666; z-index:1"></div>
+
+
+		{% include "templates/pages/S_Station_Map.js" %}
 
 {% endblock %}
 

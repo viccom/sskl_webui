@@ -45,9 +45,11 @@
 		<!-- basic scripts -->
 		<!--[if !IE]> -->
 		<script src="/assets/sskl_webui/assets/js/jquery-2.1.4.min.js"></script>
+
 		<!-- <![endif]-->
 		<!--[if IE]>
 		<script src="/assets/sskl_webui/assets/js/jquery-1.11.3.min.js"></script>
+
         <![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='/assets/sskl_webui/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
@@ -55,7 +57,7 @@
 		<script src="/assets/sskl_webui/assets/js/bootstrap.min.js"></script>
 
 		<!-- page specific plugin scripts -->
-
+		{%- block myscript %}{%- endblock -%}
 		<!-- ace scripts -->
 		<script src="/assets/sskl_webui/assets/js/ace-elements.min.js"></script>
 		<script src="/assets/sskl_webui/assets/js/ace.min.js"></script>
@@ -113,20 +115,32 @@
 				<!-- /.sidebar-shortcuts -->
                 <!--左侧导航标题-->
 				<ul class="nav nav-list">
-                    {% block leftnav %}{% endblock %}
+                    {% include 'templates/new_leftnav.html' %}
 				</ul>
 				<!--左侧导航标题-->
+				<script>
 
+					  $("ul.nav-list li").each(function(){
+					      	var crurl = window.location.pathname;
+							var crhref = $(this).find("a").attr("href");
+						if(crurl==crhref){
+						    $("ul.nav-list li .active").removeClass('active');
+						    $(this).addClass('active');
+						}
+					  });
+				</script>
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
 					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
 				</div>
         </div>
 
+
+
         <div class="main-content">
             {% block content %}{% endblock %}
         </div>
 
-        <div class="footer hidden-xs">
+        <div class="footer hidden-xs" id="footerandfooter">
             {% include 'templates/new_footer.html' %}
         </div>
 		</div><!-- /.main-container -->
