@@ -27,10 +27,7 @@ def get_context(context):
     n_list.sort(key=lambda k: (k.get('id', 0)))
     context.leftnavlist = n_list
     context.title = _('S_Station_List')
-    frappe.form_dict.rgn='RGN000023'
-    cell_list = search_station(**frappe.form_dict)
-    print('######S_Station_List:',cell_list)
-    context.cell_list = cell_list
+
 
 
 
