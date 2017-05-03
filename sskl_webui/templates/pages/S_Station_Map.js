@@ -32,7 +32,7 @@ $(function(){
 	  $('#l-map').height(parseInt($(window).height())-86);
 	});
     $("#footerandfooter").remove();
-    var dataurl = "/api/method/tieta.tieta.doctype.cell_station.cell_station.list_station_map";
+    var dataurl = "/api/method/tieta.tieta.doctype.cell_station.cell_station.search_station";
     $.ajax({url:dataurl,async:true,success:function(r){
         //console.log(r.exc);
 

@@ -6,8 +6,8 @@
 					//"bInfo" : false,
 					//"pagingType": "full_numbers" ,
 					"ajax": {
-						//"url": "/api/method/tieta.tieta.doctype.cell_station.cell_station.search_station?rgn=RGN000023",
-						"url": "/api/method/tieta.tieta.doctype.cell_station.cell_station.list_station_map",
+						"url": "/api/method/tieta.tieta.doctype.cell_station.cell_station.search_station",
+						//"url": "/api/method/tieta.tieta.doctype.cell_station.cell_station.list_station_map",
 						"dataSrc":"message",
                     },
 					"columns": [
