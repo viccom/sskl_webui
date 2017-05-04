@@ -170,7 +170,7 @@ def get_context(context):
                 },
                 {
                     "name": "C1.B2.IoStatus",
-                    "desc": "设备1状态"
+                    "desc": "设备2状态"
                 },
                 {
                     "name": "C1.B2.IoValid",
