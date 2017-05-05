@@ -59,7 +59,7 @@
 								<div class="col-xs-6 col-sm-6 profile-info-value">
 									{{tag.desc}}
 								</div>
-								<div class="col-xs-6 col-sm-6 profile-info-value" data-tagname="{{tag.name}}">
+								<div class="col-xs-6 col-sm-6 profile-info-value" data-tagname="{{tag.name}}" data-devsn="vsn">
 									<span v-text="RTvalue.{{tag.name}}.value" :style="[RTvalue.{{tag.name}}.isA?styleA:'', RTvalue.{{tag.name}}.isB?styleB:'', RTvalue.{{tag.name}}.isC?styleC:'']"></span>
 								</div>
 							</div>
@@ -229,7 +229,7 @@
 									<div class="col-xs-6 col-sm-6 profile-info-value">
 										{{tag.desc}}
 									</div>
-									<div class="col-xs-6 col-sm-6 profile-info-value" data-tagname="{{tag.name}}">
+									<div class="col-xs-6 col-sm-6 profile-info-value" data-tagname="{{tag.name}}" data-devsn="sn">
 										<span v-text="RTvalue.{{ tag.name|replace('.', '_', 2) }}.value" :style="[RTvalue.{{ tag.name|replace('.', '_', 2) }}.isA?styleA:'', RTvalue.{{ tag.name|replace('.', '_', 2) }}.isB?styleB:'', RTvalue.{{ tag.name|replace('.', '_', 2) }}.isC?styleC:'']"></span>
 									</div>
 								</div>

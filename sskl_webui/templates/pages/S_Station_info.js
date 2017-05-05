@@ -221,7 +221,7 @@
             window.symvm = symvm;
 
             executeJs();
-            refflag = setInterval(executeJs,3000);
+            refflag = setInterval(executeJs,30000);
 
             if(device_total<=1){
                 $("a.left").hide();
@@ -274,8 +274,25 @@
               $(this).click(function(){
               //window.open("http://baidu.com");
                   var tnm = $(this).attr("data-tagname");
+                  var devsn = $(this).attr("data-devsn");
+                  console.log(tnm,devsn);
                   //var tnmnew = tnm.replace(/\_/g, ".");
-                  console.log(tnm);
+                  if(devsn=='vsn'){
+                      if(current_dev==0){tnm="c1.b1."+tnm}
+                      else if(current_dev==1){tnm="c1.b2."+tnm}
+
+                    dataurl = "/S_Tag_His?sn="+symlinkdev+"&vsn="+vdevices[current_dev]+"&tag="+tnm.toLowerCase();
+                  }
+                  else{
+                    dataurl = "/S_Tag_His?sn="+symlinkdev+"&tag="+tnm.toLowerCase();
+                  }
+                  console.log(dataurl);
+                  window.open(dataurl);
+/*                    $.ajax({url:dataurl,async:true,success:function(r){
+                        console.log(r.message[0].series[0].values);
+                    }});*/
+
+
               });
           });
 
