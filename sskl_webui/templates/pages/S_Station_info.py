@@ -85,215 +85,242 @@ def get_context(context):
 
     bms2_tags = {"tags": [
         {
-            "name": "G2BV01",
+            "tid": 1,
+            "name": "BV01",
             "desc": "单体电池电压01"
         },
         {
-            "name": "G2BV02",
+            "tid": 1,
+            "name": "BV02",
             "desc": "单体电池电压02"
         },
         {
-            "name": "G2BV03",
+            "tid": 1,
+            "name": "BV03",
             "desc": "单体电池电压03"
         },
         {
-            "name": "G2BV04",
+            "tid": 1,
+            "name": "BV04",
             "desc": "单体电池电压04"
         },
         {
-            "name": "G2BV05",
+            "tid": 1,
+            "name": "BV05",
             "desc": "单体电池电压05"
         },
         {
-            "name": "G2BV06",
+            "tid": 1,
+            "name": "BV06",
             "desc": "单体电池电压06"
         },
         {
-            "name": "G2BV07",
+            "tid": 1,
+            "name": "BV07",
             "desc": "单体电池电压07"
         },
         {
-            "name": "G2BV08",
+            "tid": 1,
+            "name": "BV08",
             "desc": "单体电池电压08"
         },
         {
-            "name": "G2BV09",
+            "tid": 1,
+            "name": "BV09",
             "desc": "单体电池电压09"
         },
         {
-            "name": "G2BV10",
+            "tid": 1,
+            "name": "BV10",
             "desc": "单体电池电压10"
         },
         {
-            "name": "G2BV11",
+            "tid": 1,
+            "name": "BV11",
             "desc": "单体电池电压11"
         },
         {
-            "name": "G2BV12",
+            "tid": 1,
+            "name": "BV12",
             "desc": "单体电池电压12"
         },
         {
-            "name": "G2BV13",
+            "tid": 1,
+            "name": "BV13",
             "desc": "单体电池电压13"
         },
         {
-            "name": "G2BV14",
+            "tid": 1,
+            "name": "BV14",
             "desc": "单体电池电压14"
         },
         {
-            "name": "G2BV15",
+            "tid": 1,
+            "name": "BV15",
             "desc": "单体电池电压15"
         },
         {
-            "name": "G2BV16",
+            "tid": 1,
+            "name": "BV16",
             "desc": "单体电池电压16"
         },
         {
-            "name": "G2T01",
+            "tid": 1,
+            "name": "T01",
             "desc": "单体温度01"
         },
         {
-            "name": "G2T02",
+            "tid": 1,
+            "name": "T02",
             "desc": "单体温度02"
         },
         {
-            "name": "G2T03",
+            "tid": 1,
+            "name": "T03",
             "desc": "单体温度03"
         },
         {
-            "name": "G2T04",
+            "tid": 1,
+            "name": "T04",
             "desc": "单体温度04"
         },
         {
-            "name": "G2T05",
+            "tid": 1,
+            "name": "T05",
             "desc": "单体温度05"
         },
         {
-            "name": "G2T06",
+            "tid": 1,
+            "name": "T06",
             "desc": "单体温度06"
         },
         {
-            "name": "G2T07",
+            "tid": 1,
+            "name": "T07",
             "desc": "单体温度07"
         },
         {
-            "name": "G2T08",
+            "tid": 1,
+            "name": "T08",
             "desc": "单体温度08"
         },
         {
-            "name": "G2I",
+            "tid": 1,
+            "name": "I",
             "desc": "充放电电流"
         },
         {
-            "name": "G2V",
+            "tid": 1,
+            "name": "V",
             "desc": "总电压"
         },
         {
-            "name": "G2SOC",
+            "tid": 1,
+            "name": "SOC",
             "desc": "剩余容量"
         },
         {
-            "name": "G2BVs01",
+            "name": "BVs01",
             "desc": "电池电压状态01"
         },
         {
-            "name": "G2BVs02",
+            "name": "BVs02",
             "desc": "电池电压状态02"
         },
         {
-            "name": "G2BVs03",
+            "name": "BVs03",
             "desc": "电池电压状态03"
         },
         {
-            "name": "G2BVs04",
+            "name": "BVs04",
             "desc": "电池电压状态04"
         },
         {
-            "name": "G2BVs05",
+            "name": "BVs05",
             "desc": "电池电压状态05"
         },
         {
-            "name": "G2BVs06",
+            "name": "BVs06",
             "desc": "电池电压状态06"
         },
         {
-            "name": "G2BVs07",
+            "name": "BVs07",
             "desc": "电池电压状态07"
         },
         {
-            "name": "G2BVs08",
+            "name": "BVs08",
             "desc": "电池电压状态08"
         },
         {
-            "name": "G2BVs09",
+            "name": "BVs09",
             "desc": "电池电压状态09"
         },
         {
-            "name": "G2BVs10",
+            "name": "BVs10",
             "desc": "电池电压状态10"
         },
         {
-            "name": "G2BVs11",
+            "name": "BVs11",
             "desc": "电池电压状态11"
         },
         {
-            "name": "G2BVs12",
+            "name": "BVs12",
             "desc": "电池电压状态12"
         },
         {
-            "name": "G2BVs13",
+            "name": "BVs13",
             "desc": "电池电压状态13"
         },
         {
-            "name": "G2BVs14",
+            "name": "BVs14",
             "desc": "电池电压状态14"
         },
         {
-            "name": "G2BVs15",
+            "name": "BVs15",
             "desc": "电池电压状态15"
         },
         {
-            "name": "G2BVs16",
+            "name": "BVs16",
             "desc": "电池电压状态16"
         },
         {
-            "name": "G2Ts01",
+            "name": "Ts01",
             "desc": "温度状态01"
         },
         {
-            "name": "G2Ts02",
+            "name": "Ts02",
             "desc": "温度状态02"
         },
         {
-            "name": "G2Ts03",
+            "name": "Ts03",
             "desc": "温度状态03"
         },
         {
-            "name": "G2Ts04",
+            "name": "Ts04",
             "desc": "温度状态04"
         },
         {
-            "name": "G2Ts05",
+            "name": "Ts05",
             "desc": "温度状态05"
         },
         {
-            "name": "G2Ts06",
+            "name": "Ts06",
             "desc": "温度状态06"
         },
         {
-            "name": "G2Ts07",
+            "name": "Ts07",
             "desc": "温度状态07"
         },
         {
-            "name": "G2Ts08",
+            "name": "Ts08",
             "desc": "温度状态08"
         },
         {
-            "name": "G2Is",
+            "name": "Is",
             "desc": "充放电电流状态"
         },
         {
-            "name": "G2Vs",
+            "name": "Vs",
             "desc": "总电压状态"
         }
     ]}
