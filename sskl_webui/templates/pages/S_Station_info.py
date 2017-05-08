@@ -85,137 +85,110 @@ def get_context(context):
 
     bms2_tags = {"tags": [
         {
-            "tid": 1,
             "name": "BV01",
             "desc": "单体电池电压01"
         },
         {
-            "tid": 1,
             "name": "BV02",
             "desc": "单体电池电压02"
         },
         {
-            "tid": 1,
             "name": "BV03",
             "desc": "单体电池电压03"
         },
         {
-            "tid": 1,
             "name": "BV04",
             "desc": "单体电池电压04"
         },
         {
-            "tid": 1,
             "name": "BV05",
             "desc": "单体电池电压05"
         },
         {
-            "tid": 1,
             "name": "BV06",
             "desc": "单体电池电压06"
         },
         {
-            "tid": 1,
             "name": "BV07",
             "desc": "单体电池电压07"
         },
         {
-            "tid": 1,
             "name": "BV08",
             "desc": "单体电池电压08"
         },
         {
-            "tid": 1,
             "name": "BV09",
             "desc": "单体电池电压09"
         },
         {
-            "tid": 1,
             "name": "BV10",
             "desc": "单体电池电压10"
         },
         {
-            "tid": 1,
             "name": "BV11",
             "desc": "单体电池电压11"
         },
         {
-            "tid": 1,
             "name": "BV12",
             "desc": "单体电池电压12"
         },
         {
-            "tid": 1,
             "name": "BV13",
             "desc": "单体电池电压13"
         },
         {
-            "tid": 1,
             "name": "BV14",
             "desc": "单体电池电压14"
         },
         {
-            "tid": 1,
             "name": "BV15",
             "desc": "单体电池电压15"
         },
         {
-            "tid": 1,
             "name": "BV16",
             "desc": "单体电池电压16"
         },
         {
-            "tid": 1,
             "name": "T01",
             "desc": "单体温度01"
         },
         {
-            "tid": 1,
             "name": "T02",
             "desc": "单体温度02"
         },
         {
-            "tid": 1,
             "name": "T03",
             "desc": "单体温度03"
         },
         {
-            "tid": 1,
             "name": "T04",
             "desc": "单体温度04"
         },
         {
-            "tid": 1,
             "name": "T05",
             "desc": "单体温度05"
         },
         {
-            "tid": 1,
             "name": "T06",
             "desc": "单体温度06"
         },
         {
-            "tid": 1,
             "name": "T07",
             "desc": "单体温度07"
         },
         {
-            "tid": 1,
             "name": "T08",
             "desc": "单体温度08"
         },
         {
-            "tid": 1,
             "name": "I",
             "desc": "充放电电流"
         },
         {
-            "tid": 1,
             "name": "V",
             "desc": "总电压"
         },
         {
-            "tid": 1,
             "name": "SOC",
             "desc": "剩余容量"
         },

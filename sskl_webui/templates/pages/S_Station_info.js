@@ -8,6 +8,7 @@
 
         symts = {{symtagsjson}};
         tagsjson = {{tagsjson}};
+        console.log(tagsjson);
         function GetRandomNum(Min,Max)
         {
             var Range = Max - Min;
