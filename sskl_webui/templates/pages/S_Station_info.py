@@ -45,7 +45,7 @@ def get_context(context):
     context.sn = '2-26003-161220-00002'
     context.vsn = ['2-26003-161220-00002_C2_B2']
     '''
-    tags = {"tags": [{"name": "Tenv", "desc": "\u73af\u5883\u6e29\u5ea6"},
+    bms1_tags = {"tags": [{"name": "Tenv", "desc": "\u73af\u5883\u6e29\u5ea6"},
                      {"name": "Usmax", "desc": "\u5355\u4f53\u7535\u538b\u6700\u5927\u503c"},
                      {"name": "Usmin", "desc": "\u5355\u4f53\u7535\u538b\u6700\u5c0f\u503c"},
                      {"name": "Tshi", "desc": "\u5355\u4f53\u6e29\u5ea6\u6700\u9ad8\u503c"},
@@ -82,6 +82,221 @@ def get_context(context):
                      {"name": "Ts07", "desc": "\u5355\u4f53\u6e29\u5ea607"},
                      {"name": "Ts08", "desc": "\u5355\u4f53\u6e29\u5ea608"},
                     ]}
+
+    bms2_tags = {"tags": [
+        {
+            "name": "G2BV01",
+            "desc": "单体电池电压01"
+        },
+        {
+            "name": "G2BV02",
+            "desc": "单体电池电压02"
+        },
+        {
+            "name": "G2BV03",
+            "desc": "单体电池电压03"
+        },
+        {
+            "name": "G2BV04",
+            "desc": "单体电池电压04"
+        },
+        {
+            "name": "G2BV05",
+            "desc": "单体电池电压05"
+        },
+        {
+            "name": "G2BV06",
+            "desc": "单体电池电压06"
+        },
+        {
+            "name": "G2BV07",
+            "desc": "单体电池电压07"
+        },
+        {
+            "name": "G2BV08",
+            "desc": "单体电池电压08"
+        },
+        {
+            "name": "G2BV09",
+            "desc": "单体电池电压09"
+        },
+        {
+            "name": "G2BV10",
+            "desc": "单体电池电压10"
+        },
+        {
+            "name": "G2BV11",
+            "desc": "单体电池电压11"
+        },
+        {
+            "name": "G2BV12",
+            "desc": "单体电池电压12"
+        },
+        {
+            "name": "G2BV13",
+            "desc": "单体电池电压13"
+        },
+        {
+            "name": "G2BV14",
+            "desc": "单体电池电压14"
+        },
+        {
+            "name": "G2BV15",
+            "desc": "单体电池电压15"
+        },
+        {
+            "name": "G2BV16",
+            "desc": "单体电池电压16"
+        },
+        {
+            "name": "G2T01",
+            "desc": "单体温度01"
+        },
+        {
+            "name": "G2T02",
+            "desc": "单体温度02"
+        },
+        {
+            "name": "G2T03",
+            "desc": "单体温度03"
+        },
+        {
+            "name": "G2T04",
+            "desc": "单体温度04"
+        },
+        {
+            "name": "G2T05",
+            "desc": "单体温度05"
+        },
+        {
+            "name": "G2T06",
+            "desc": "单体温度06"
+        },
+        {
+            "name": "G2T07",
+            "desc": "单体温度07"
+        },
+        {
+            "name": "G2T08",
+            "desc": "单体温度08"
+        },
+        {
+            "name": "G2I",
+            "desc": "充放电电流"
+        },
+        {
+            "name": "G2V",
+            "desc": "总电压"
+        },
+        {
+            "name": "G2SOC",
+            "desc": "剩余容量"
+        },
+        {
+            "name": "G2BVs01",
+            "desc": "电池电压状态01"
+        },
+        {
+            "name": "G2BVs02",
+            "desc": "电池电压状态02"
+        },
+        {
+            "name": "G2BVs03",
+            "desc": "电池电压状态03"
+        },
+        {
+            "name": "G2BVs04",
+            "desc": "电池电压状态04"
+        },
+        {
+            "name": "G2BVs05",
+            "desc": "电池电压状态05"
+        },
+        {
+            "name": "G2BVs06",
+            "desc": "电池电压状态06"
+        },
+        {
+            "name": "G2BVs07",
+            "desc": "电池电压状态07"
+        },
+        {
+            "name": "G2BVs08",
+            "desc": "电池电压状态08"
+        },
+        {
+            "name": "G2BVs09",
+            "desc": "电池电压状态09"
+        },
+        {
+            "name": "G2BVs10",
+            "desc": "电池电压状态10"
+        },
+        {
+            "name": "G2BVs11",
+            "desc": "电池电压状态11"
+        },
+        {
+            "name": "G2BVs12",
+            "desc": "电池电压状态12"
+        },
+        {
+            "name": "G2BVs13",
+            "desc": "电池电压状态13"
+        },
+        {
+            "name": "G2BVs14",
+            "desc": "电池电压状态14"
+        },
+        {
+            "name": "G2BVs15",
+            "desc": "电池电压状态15"
+        },
+        {
+            "name": "G2BVs16",
+            "desc": "电池电压状态16"
+        },
+        {
+            "name": "G2Ts01",
+            "desc": "温度状态01"
+        },
+        {
+            "name": "G2Ts02",
+            "desc": "温度状态02"
+        },
+        {
+            "name": "G2Ts03",
+            "desc": "温度状态03"
+        },
+        {
+            "name": "G2Ts04",
+            "desc": "温度状态04"
+        },
+        {
+            "name": "G2Ts05",
+            "desc": "温度状态05"
+        },
+        {
+            "name": "G2Ts06",
+            "desc": "温度状态06"
+        },
+        {
+            "name": "G2Ts07",
+            "desc": "温度状态07"
+        },
+        {
+            "name": "G2Ts08",
+            "desc": "温度状态08"
+        },
+        {
+            "name": "G2Is",
+            "desc": "充放电电流状态"
+        },
+        {
+            "name": "G2Vs",
+            "desc": "总电压状态"
+        }
+    ]}
 
     symtags = {"tags": [
                 {
@@ -191,8 +406,12 @@ def get_context(context):
 
     context.symtags = symtags
     context.symtagsjson = json.dumps(symtags)
-    context.tags = tags
-    context.tagsjson = json.dumps(tags)
+    if sn == '2-26001-161216-00027':
+        context.tags = bms2_tags
+        context.tagsjson = json.dumps(bms2_tags)
+    else:
+        context.tags = bms1_tags
+        context.tagsjson = json.dumps(bms1_tags)
     context.doc = doc
     n_list.sort(key=lambda k: (k.get('id', 0)))
     context.leftnavlist = n_list
