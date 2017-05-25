@@ -1,14 +1,17 @@
 <script>
-        device_total = {{vsn|length}};
-        current_dev = 0;
-        symlinkdev = "{{sn}}";
-        vdevices = {{vsn}};
-        refflag = 0;
-
-
-        symts = {{symtagsjson}};
-        tagsjson = {{tagsjson}};
+        var device_total = {{vsn|length}};
+        var current_dev = 0;
+        var symlinkdev = "{{sn}}";
+        var vdevices = {{vsn}};
+        var refflag = 0;
+        var Battery_No = { value: "null" };
+        var Env_Temp = { value: "null" };
+        var gatewaytime = { value: "null" };
+        var symts = {{symtagsjson}};
+        var tagsjson = {{tagsjson}};
         console.log(tagsjson);
+
+        //获取随机数函数
         function GetRandomNum(Min,Max)
         {
             var Range = Max - Min;
@@ -16,6 +19,14 @@
             return(Min + Math.round(Rand * Range));
         }
 
+        //UTC转本地时间格式（24小时格式）
+        function utctolocaltime(tm){
+            var unixTimestamp = new Date(parseInt(tm/1000)*1000);
+            var commonTime = unixTimestamp.toLocaleString('chinese',{hour12:false});
+            return commonTime;
+        }
+
+	    //解析URL的函数
         function parseURL(url) {
              var a =  document.createElement('a');
              a.href = url;
@@ -44,6 +55,7 @@
              };
             }
 
+        //获取实时数据的函数
          function GetRtvalue(vueobj, sn, vsn)
         {
             if(vsn){
@@ -65,21 +77,43 @@
                             //console.log(symts.tags.length);
                     function setvmvalue(vueobj)
                     {
-                         vueobj.RTvalue[ii].value = v.PV;
+                         if(ii=='Tenv'){
+                             Env_Temp.value = v.PV;
+                         }
+                         else if(ii=='BNo'){
+                             Battery_No.value = v.PV;
+                         }
+                         else if(ii=='KnUptime'){
+                             //console.log(v.TM);
+                             gatewaytime.value = utctolocaltime(v.TM);
+                         }
+
+                        vueobj.RTvalue[ii].value = v.PV;
+
+
                           if(v.Q=='1'){
                               vueobj.RTvalue[ii].isA = true;
                               vueobj.RTvalue[ii].isB = false;
                               vueobj.RTvalue[ii].isC = false;
+                              vueobj.RTvalue[ii].isD = false;
                           }
                           else if(v.Q=='0'){
                               vueobj.RTvalue[ii].isA = false;
                               vueobj.RTvalue[ii].isB = false;
                               vueobj.RTvalue[ii].isC = true;
+                              vueobj.RTvalue[ii].isD = false;
+                          }
+                          else if(v.Q=='256'){
+                              vueobj.RTvalue[ii].isA = false;
+                              vueobj.RTvalue[ii].isB = false;
+                              vueobj.RTvalue[ii].isC = false;
+                              vueobj.RTvalue[ii].isD = true;
                           }
                           else{
                               vueobj.RTvalue[ii].isA = false;
                               vueobj.RTvalue[ii].isB = true;
                               vueobj.RTvalue[ii].isC = false;
+                              vueobj.RTvalue[ii].isD = false;
                           }
                     }
 
@@ -115,6 +149,7 @@
             });
         }
 
+        //生成本地时间格式的函数
         Date.prototype.Format = function(fmt)
         { //author: meizz
             var o = {
@@ -134,7 +169,7 @@
             return fmt;
         }
 
-
+        //执行函数
        function executeJs() {
             try {
                 window.vm.time = new Date().Format("yyyy-MM-dd hh:mm:ss");
@@ -150,6 +185,7 @@
         }
 
         $(function(){
+            //判断当前URL设置页面中的哪一个菜单被激活
             var myURL = parseURL(document.referrer);
             //var y = $("ul.breadcrumb").children().last().text();
             mypath = myURL.path.split("/");
@@ -157,12 +193,15 @@
             if(mypath[1]=='S_Station_List'){
                 $("ul.breadcrumb").children().last().remove();
                 $("ul.breadcrumb").append('<li><a href="/'+mypath[1]+'">{{_('S_Station_List')}}</a></li>');
-                $("ul.breadcrumb").append('<li class="active">{{Station_name}}</li>');
+                $("ul.breadcrumb").append('<li class="active">{{ doc.station_name }}</li>');
             }
-            if(mypath[1]=='S_Station_Map'){
+            else if(mypath[1]=='S_Station_Map'){
                 $("ul.breadcrumb").children().last().remove();
                 $("ul.breadcrumb").append('<li><a href="/'+mypath[1]+'">{{_('S_Station_Map')}}</a></li>');
-                $("ul.breadcrumb").append('<li class="active">{{Station_name}}</li>');
+                $("ul.breadcrumb").append('<li class="active">{{ doc.station_name }}</li>');
+            }
+            else{
+                $("ul.breadcrumb").append('<li class="active">{{ doc.station_name }}</li>');
             }
 
             if(mypath[1]=="S_Station_List"){
@@ -173,16 +212,20 @@
                 console.log($("ul.nav-list li:eq(1) a").attr("href"));
                 $("ul.nav-list li:eq(1)").addClass('active');
             }
+            //判断当前URL设置页面中的哪一个菜单被激活
 
-
+            //定义显示模板中设备点表的VUE变量
             var vm = new Vue({
                 el: '#vm',
                 data: {
                     time: new Date().Format("yyyy-MM-dd hh:mm:ss"),
+                    gatewaytime: gatewaytime,
+                    B_No: Battery_No,
+                    E_Temp: Env_Temp,
 
                     RTvalue: {
                         {% for tag in tags.tags %}
-                            {{tag.name}}:{value: 'null',isA:false,isB:false,isC:false},
+                            {{tag.name}}:{value: 'null',isA:false,isB:false,isC:false,isD:false},
                         {% endfor %}
                         },
                         styleA:{
@@ -193,18 +236,23 @@
                         },
                         styleC:{
                             color:'green'
+                        },
+                        styleD:{
+                            color:'brown'
                         }
 
                 }
             });
             window.vm = vm;
+            //定义显示模板中设备点表的VUE变量
 
+            //定义显示模板中网关点表的VUE变量
             var symvm = new Vue({
                 el: '#symvm',
                 data: {
                     RTvalue: {
                         {% for tag in symtags.tags %}
-                            {{ tag.name|replace('.', '_', 2) }}:{value: 'null',isA:false,isB:false,isC:false},
+                            {{ tag.name|replace('.', '_', 2) }}:{value: 'null',isA:false,isB:false,isC:false,isD:false},
                         {% endfor %}
                         },
 
@@ -216,13 +264,17 @@
                         },
                         styleC:{
                             color:'green'
+                        },
+                        styleD:{
+                            color:'brown'
                         }
                 }
             });
             window.symvm = symvm;
+            //定义显示模板中网关点表的VUE变量
 
             executeJs();
-            refflag = setInterval(executeJs,30000);
+            refflag = setInterval(executeJs,5000);
 
             if(device_total<=1){
                 $("a.left").hide();
@@ -233,8 +285,7 @@
                 $("a.right").show();
             }
 
-
-
+          //点击左边的箭头图标
           $("a.left").click(function(){
             if(current_dev==0){
                 console.log(current_dev);
@@ -249,7 +300,9 @@
                 }
             }
           });
+            //点击左边的箭头图标
 
+            //点击左边的箭头图标
           $("a.right").click(function(){
               if(current_dev==(device_total-1)){
                 console.log(current_dev);
@@ -269,9 +322,10 @@
 
             }
           });
+            //点击右边的箭头图标
 
-
-          $("div .profile-info-value").each(function(){
+            //点击数据显示的DIV
+          $("div .device_datas").each(function(){
               $(this).click(function(){
               //window.open("http://baidu.com");
                   var tnm = $(this).attr("data-tagname");
@@ -279,8 +333,6 @@
                   console.log(tnm,devsn);
                   //var tnmnew = tnm.replace(/\_/g, ".");
                   if(devsn=='vsn'){
-                      if(current_dev==0){tnm="c1.b1."+tnm}
-                      else if(current_dev==1){tnm="c1.b2."+tnm}
 
                     dataurl = "/S_Tag_His?sn="+symlinkdev+"&vsn="+vdevices[current_dev]+"&tag="+tnm.toLowerCase();
                   }
@@ -296,7 +348,7 @@
 
               });
           });
-
+            //点击数据显示的DIV
         });
 
 </script>

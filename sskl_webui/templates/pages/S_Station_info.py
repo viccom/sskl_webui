@@ -307,6 +307,9 @@ def get_context(context):
                     "name": "status",
                     "desc": "状态"
                 },
+                {"name": "KnUptime",
+                 "desc": "内核运行时间"
+                 },
                 {
                     "name": "transpdatas",
                     "desc": "变化数据"
@@ -420,5 +423,5 @@ def get_context(context):
     n_list.sort(key=lambda k: (k.get('id', 0)))
     context.leftnavlist = n_list
     context.title = _('S_Station_List')
-    context.Station_name = name
+    context.Station_name = doc.station_name
 

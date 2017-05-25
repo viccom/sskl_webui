@@ -46,3 +46,4 @@ apps/sskl_webui/sskl_webui/templates/pages/S_Station_List.html +35,station_type,
 ,Station Map,基站地图
 ,Battery Platform,电池平台
 ,Switch to Desktop,切换到后台
+,Gateway Time,设备时间
