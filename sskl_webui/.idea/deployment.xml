@@ -5,7 +5,8 @@
       <paths name="frappe-192.168.174.140 (1)">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="sskl_webui/sskl_webui" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="iot" local="$PROJECT_DIR$/../../frappe_iot" web="/" />
           </mappings>
         </serverdata>
       </paths>
