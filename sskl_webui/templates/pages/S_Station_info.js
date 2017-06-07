@@ -9,7 +9,11 @@
         var gatewaytime = { value: "null" };
         var symts = {{symtagsjson}};
         var tagsjson = {{tagsjson}};
+        var batterypack_count = {{batterypack_count}};
+        var batterypack = {{batterypack}};
         console.log(tagsjson);
+        console.log(batterypack_count);
+        console.log(batterypack);
 
         //获取随机数函数
         function GetRandomNum(Min,Max)
@@ -64,7 +68,7 @@
             else{
                 var dataurl = "/api/method/iot.hdb.iot_device_data?sn="+sn;
             }
-            //console.log(dataurl);
+            console.log(dataurl);
             $.ajax({url:dataurl,async:true,success:function(r)
             {
                 //console.log(r);
@@ -175,7 +179,7 @@
                 window.vm.time = new Date().Format("yyyy-MM-dd hh:mm:ss");
                 window.vm.value = GetRandomNum(1,50);
                 if(symlinkdev){
-                    GetRtvalue(window.vm, symlinkdev, vdevices[current_dev]);
+                    GetRtvalue(window.vm, symlinkdev, batterypack[current_dev]['vsn']);
                     GetRtvalue(window.symvm, symlinkdev);
                 }
 
@@ -276,7 +280,7 @@
             executeJs();
             refflag = setInterval(executeJs,5000);
 
-            if(device_total<=1){
+            if(batterypack_count<=1){
                 $("a.left").hide();
                 $("a.right").hide();
             }
@@ -304,18 +308,18 @@
 
             //点击左边的箭头图标
           $("a.right").click(function(){
-              if(current_dev==(device_total-1)){
+              if(current_dev==(batterypack_count-1)){
                 console.log(current_dev);
             }
             else{
                 current_dev=current_dev+1;
                 console.log(current_dev);
                 executeJs();
-                if(current_dev<(device_total-1)){
+                if(current_dev<(batterypack_count-1)){
                 $("a.left").show();
                 $("a.right").show();
                 }
-                else if(current_dev==(device_total-1)){
+                else if(current_dev==(batterypack_count-1)){
                     $("a.left").show();
                     $("a.right").hide();
                 }
@@ -334,7 +338,7 @@
                   //var tnmnew = tnm.replace(/\_/g, ".");
                   if(devsn=='vsn'){
 
-                    dataurl = "/S_Tag_His?sn="+symlinkdev+"&vsn="+vdevices[current_dev]+"&tag="+tnm.toLowerCase();
+                    dataurl = "/S_Tag_His?sn="+symlinkdev+"&vsn="+batterypack[current_dev]['vsn']+"&tag="+tnm.toLowerCase();
                   }
                   else{
                     dataurl = "/S_Tag_His?sn="+symlinkdev+"&tag="+tnm.toLowerCase();
