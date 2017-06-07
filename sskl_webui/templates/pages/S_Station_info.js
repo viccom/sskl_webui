@@ -11,9 +11,9 @@
         var tagsjson = {{tagsjson}};
         var batterypack_count = {{batterypack_count}};
         var batterypack = {{batterypack}};
-        console.log(tagsjson);
-        console.log(batterypack_count);
-        console.log(batterypack);
+        //console.log(tagsjson);
+        //console.log(batterypack_count);
+        //console.log(batterypack);
 
         //获取随机数函数
         function GetRandomNum(Min,Max)
@@ -68,7 +68,7 @@
             else{
                 var dataurl = "/api/method/iot.hdb.iot_device_data?sn="+sn;
             }
-            console.log(dataurl);
+            //console.log(dataurl);
             $.ajax({url:dataurl,async:true,success:function(r)
             {
                 //console.log(r);
@@ -76,9 +76,22 @@
 
                 //################################################
                 //console.log(symts.tags);
+                var bb = batterypack[current_dev];
+                var tagprelen = 0;
+                if(vsn && bb.hasOwnProperty('groupname')){
+                    tagprelen = batterypack[current_dev]['groupname'].length+1
+                }
+                //console.log(tagprelen);
                 $.each(arr, function (i, v) {
-                    var ii = i.replace(/\./g, "_");
-                            //console.log(symts.tags.length);
+                    if(tagprelen){
+                        var ii = i.substring(tagprelen).replace(/\./g, "_");
+                        //console.log(ii);
+                    }
+                    else{
+                        var ii = i.replace(/\./g, "_");
+                    }
+
+
                     function setvmvalue(vueobj)
                     {
                          if(ii=='Tenv'){
@@ -302,11 +315,15 @@
                     $("a.left").hide();
                     $("a.right").show();
                 }
+                else{
+                    $("a.left").show();
+                    $("a.right").show();
+                }
             }
           });
             //点击左边的箭头图标
 
-            //点击左边的箭头图标
+            //点击右边的箭头图标
           $("a.right").click(function(){
               if(current_dev==(batterypack_count-1)){
                 console.log(current_dev);
@@ -337,7 +354,10 @@
                   console.log(tnm,devsn);
                   //var tnmnew = tnm.replace(/\_/g, ".");
                   if(devsn=='vsn'){
-
+                    var bb = batterypack[current_dev];
+                    if(bb.hasOwnProperty('groupname')){
+                        tnm = batterypack[current_dev]['groupname'] + "." + tnm;
+                    }
                     dataurl = "/S_Tag_His?sn="+symlinkdev+"&vsn="+batterypack[current_dev]['vsn']+"&tag="+tnm.toLowerCase();
                   }
                   else{
